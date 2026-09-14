@@ -1,30 +1,28 @@
 // Exclusivo / Combos
 import exclusiveImg from "@/assets/feminino/exclusive.jpg";
 
-// Mãos
-import alongamentoImg from "@/assets/feminino/maos/alongamento.jpg";
+// Mãos (mapeadas exatamente conforme os arquivos da pasta)
 import blindagemImg from "@/assets/feminino/maos/blindagem.jpg";
-import esmaltacaoImg from "@/assets/feminino/maos/esmaltacao.jpg";
-import manutencaoGelImg from "@/assets/feminino/maos/manutencaogel.jpg";
-import removerGelImg from "@/assets/feminino/maos/remover gel.jpg";
-import reparoImg from "@/assets/feminino/maos/reparo.jpg";
-import vernixImg from "@/assets/feminino/maos/vernix.jpg";
 import vernizGelImg from "@/assets/feminino/maos/vernizgel.jpg";
+import alongamentoImg from "@/assets/feminino/maos/alongamentoemgel.jpeg";
+import manicureTradicionalImg from "@/assets/feminino/maos/manicuretradicional.jpeg";
+import manutencaoGelImg from "@/assets/feminino/maos/manutencao.jpeg";
+import reparoImg from "@/assets/feminino/maos/repararunha.jpeg";
+import removerGelImg from "@/assets/feminino/maos/remocao.jpeg";
 
 // Pés
 import pedicureImg from "@/assets/feminino/pes/pedicure.jpg";
 import pedicureGelImg from "@/assets/feminino/pes/pedicuregel.jpg";
 import pedicureMedicalImg from "@/assets/feminino/pes/pedicuremedical.jpg";
 
-// Pestanas
-import pestanasImg from "@/assets/feminino/pestanas/pestanas.jpg";
-import extensaoImg from "@/assets/feminino/pestanas/extensao.jpg";
-import remocaoPestanasImg from "@/assets/feminino/pestanas/remocao.jpg";
+// Pestanas (em .jpeg)
+import pestanasImg from "@/assets/feminino/pestanas/pestanas.jpeg";
+import lashImg from "@/assets/feminino/pestanas/lash.jpeg";
+import remocaoPestanasImg from "@/assets/feminino/pestanas/remocao.jpeg";
 
-// Sobrancelhas (pasta com "S" maiúsculo)
-import bucoImg from "@/assets/feminino/Sobrancelhas/buco.jpg";
-import designImg from "@/assets/feminino/Sobrancelhas/design.jpg";
-import designHennaImg from "@/assets/feminino/Sobrancelhas/designhenna.jpg";
+// Sobrancelhas (designer.jpeg e henna.jpeg)
+import designImg from "@/assets/feminino/Sobrancelhas/designer.jpeg";
+import designHennaImg from "@/assets/feminino/Sobrancelhas/henna.jpeg";
 
 // Depilação (cards compactos e genérico)
 import depilacaoAxilasImg from "@/assets/feminino/depilacao/axilas.jpg";
@@ -41,9 +39,9 @@ import depilacaoVirilhaTotalImg from "@/assets/feminino/depilacao/virilhacomplet
 /** Nome do serviço (catálogo) → ficheiro local importado. */
 export const feminineServiceImages: Record<string, string> = {
   // Mãos
-  "Manicure Tradicional + Verniz Tradicional": vernixImg,
-  "Esmaltação Tradicional": esmaltacaoImg,
+  "Manicure Tradicional + Verniz Tradicional": manicureTradicionalImg,
   "Manicure + Verniz Gel": vernizGelImg,
+  "Blindagem ou Banho de Gel": blindagemImg,
   Blindagem: blindagemImg,
   "Alongamento em Gel — Aplicação": alongamentoImg,
   "Manutenção de Gel": manutencaoGelImg,
@@ -53,6 +51,7 @@ export const feminineServiceImages: Record<string, string> = {
   // Pés
   "Pedicure Tradicional": pedicureImg,
   "Pedicure + Verniz Gel": pedicureGelImg,
+  "Pedicure Medical": pedicureMedicalImg,
   "Pedicure Medical — Avaliação + Preventiva": pedicureMedicalImg,
   "Pedicure Medical — Nível 1": exclusiveImg,
   "Pedicure Medical — Nível 2": exclusiveImg,
@@ -60,22 +59,21 @@ export const feminineServiceImages: Record<string, string> = {
 
   // Pestanas
   "Pestanas Express em Tela": pestanasImg,
-  "Manutenção — até 30 dias": exclusiveImg,
-  Remoção: remocaoPestanasImg,
-  "Remoção + Nova Aplicação": exclusiveImg,
-  "Lash Design / Extensão de Cílios": extensaoImg,
+  "Remoção": remocaoPestanasImg,
+  "Remoção de Pestanas": remocaoPestanasImg,
+  "Lash Design": lashImg,
+  "Lash Design / Extensão de Cílios": lashImg,
 
   // Sobrancelhas
   "Design de Sobrancelhas": designImg,
   "Design + Henna": designHennaImg,
-  "Manutenção de Design": exclusiveImg,
-  Buço: bucoImg,
-  "Design + Buço": exclusiveImg,
+  "Design de Sobrancelhas com Henna": designHennaImg,
 
   // Depilação
   "Depilação em Cera": depilacaoPernaCompletaImg,
+  "Depilação feminina com cera quente": depilacaoPernaCompletaImg,
 
-  // Experiências Riso (todos recebem exclusive)
+  // Experiências Riso
   "Riso Essential": exclusiveImg,
   "Riso Beauty": exclusiveImg,
   "Riso Signature": exclusiveImg,
@@ -98,5 +96,5 @@ export const feminineWaxImages: Record<string, string> = {
   "Perna Inteira": depilacaoPernaCompletaImg,
   Braços: depilacaoBracoImg,
   Barriga: depilacaoBarrigaImg,
-  Costas: depilacaoPernaCompletaImg, // fallback para costas
+  Costas: depilacaoPernaCompletaImg,
 };

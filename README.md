@@ -6,11 +6,11 @@ Depois dele, você envia o Prompt 2, que vai substituir os conteúdos temporári
 
 PROMPT 1 — ESTRUTURA PREMIUM DO SITE
 
-STUDIO DE ESTÉTICA PREMIUM — WAVY LABS PERFORMANCE
+STUDIO DE ESTÉTICA PREMIUM — WAVE LABS PERFORMANCE
 
 Crie um site institucional premium para um estúdio de estética de alto padrão.
 
-O projeto deve seguir o padrão Wavy Labs Performance: design exclusivo, moderno, sofisticado, altamente conversivo, otimizado para SEO, SEO Local, Google, Meta Ads e performance.
+O projeto deve seguir o padrão Wave Labs Performance: design exclusivo, moderno, sofisticado, altamente conversivo, otimizado para SEO, SEO Local, Google, Meta Ads e performance.
 
 O resultado não pode ter aparência de template genérico ou site criado por IA.
 
@@ -516,7 +516,7 @@ Criar footer profissional contendo:
 
 Adicionar:
 
-"Site desenvolvido por Wavy Labs Performance"
+"Site desenvolvido por Wave Labs Performance"
 
 IMPORTANTE
 

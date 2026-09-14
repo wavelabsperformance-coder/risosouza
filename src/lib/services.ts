@@ -23,7 +23,7 @@ export interface Service {
 export const services: Service[] = [
   {
     slug: "alongamento-em-gel",
-    name: "Alongamento em Gel, Esmaltação, Manicure e Blindagem",
+    name: "Alongamento em Gel, Manicure, Verniz Gel e Blindagem",
     short:
       "Unhas elegantes, resistentes e com acabamento natural, desenhadas para o seu estilo.",
     description:
@@ -47,13 +47,14 @@ export const services: Service[] = [
         a: "Entre 2h e 2h30, sempre com horário marcado e sem pressa.",
       },
     ],
-    seoTitle: "Alongamento em Gel em Almada | Studio Riso Souza",
+    seoTitle: "Alongamento em Gel e Verniz Gel em Almada | Studio Riso Souza",
     seoDescription:
-      "Alongamento em gel, esmaltação em gel, manicure e blindagem em Almada. Unhas naturais, resistentes e personalizadas. Atendimento com horário marcado.",
+      "Alongamento em gel, verniz gel, manicure e blindagem em Almada. Unhas naturais, resistentes e personalizadas. Atendimento com horário marcado.",
   },
   {
     slug: "pedicure-medical",
     name: "Pedicure Medical",
+    price: "Valor sob análise de cada caso",
     short:
       "Tratamento especializado para saúde, conforto e beleza dos pés, com técnica segura.",
     description:
@@ -70,11 +71,11 @@ export const services: Service[] = [
       "Maior conforto ao caminhar",
     ],
     duration: "1h30",
-    note: "Realizado mediante avaliação das necessidades da cliente.",
+    note: "Realizado mediante avaliação individual de cada caso.",
     faq: [
       {
         q: "Preciso de avaliação prévia?",
-        a: "Sim. O procedimento é realizado mediante avaliação das necessidades de cada cliente.",
+        a: "Sim. O procedimento é realizado mediante avaliação das necessidades de cada cliente, sendo o valor sob análise de cada caso.",
       },
       {
         q: "É indicado para pé diabético?",
@@ -89,20 +90,20 @@ export const services: Service[] = [
     slug: "lash-design",
     name: "Lash Design",
     short:
-      "Extensões de cílios personalizadas que realçam o olhar respeitando a sua beleza natural.",
+      "Extensões de pestanas personalizadas que realçam o olhar respeitando a sua beleza natural.",
     description:
-      "Realce do olhar através da aplicação personalizada de extensões de cílios, respeitando o formato dos olhos e a beleza natural de cada mulher.",
+      "Realce do olhar através da aplicação personalizada de extensões de pestanas, respeitando o formato dos olhos e a beleza natural de cada mulher.",
     benefits: [
       "Olhar mais expressivo",
       "Resultado natural ou marcante",
       "Mais praticidade no dia a dia",
       "Mais autoestima",
     ],
-    duration: "30 minutos",
+    duration: "Conforme o procedimento",
     care: "Evitar molhar nas primeiras 24 horas.",
     faq: [
       {
-        q: "Posso molhar os cílios depois?",
+        q: "Posso molhar as pestanas depois?",
         a: "Recomenda-se evitar molhar nas primeiras 24 horas após a aplicação.",
       },
       {
@@ -110,9 +111,9 @@ export const services: Service[] = [
         a: "Sim. O desenho é escolhido consigo, do mais natural ao mais marcante.",
       },
     ],
-    seoTitle: "Lash Design — Extensão de Cílios em Almada | Studio Riso Souza",
+    seoTitle: "Lash Design — Extensão de Pestanas em Almada | Studio Riso Souza",
     seoDescription:
-      "Lash design em Almada. Extensões de cílios personalizadas ao formato dos seus olhos, com resultado natural e olhar mais expressivo.",
+      "Lash design em Almada. Extensões de pestanas personalizadas ao formato dos seus olhos, com resultado natural e olhar mais expressivo.",
   },
   {
     slug: "design-de-sobrancelhas",
@@ -141,6 +142,7 @@ export const services: Service[] = [
   {
     slug: "design-de-sobrancelhas-com-henna",
     name: "Design de Sobrancelhas com Henna",
+    price: "27 €",
     short:
       "Modelagem com henna para preenchimento temporário e valorização do desenho natural.",
     description:
@@ -164,11 +166,11 @@ export const services: Service[] = [
   },
   {
     slug: "depilacao-em-cera",
-    name: "Depilação em Cera",
+    name: "Depilação feminina com cera quente",
     short:
       "Técnica cuidadosa para uma pele lisa, macia e uma sensação prolongada de bem-estar.",
     description:
-      "Remoção dos pelos através de técnica cuidadosa, proporcionando pele lisa, macia e sensação prolongada de bem-estar, num ambiente reservado e confortável.",
+      "Remoção dos pelos através de técnica cuidadosa com cera quente, proporcionando pele lisa, macia e sensação prolongada de bem-estar, num ambiente reservado e confortável.",
     benefits: [
       "Pele suave por mais tempo",
       "Crescimento gradual dos pelos",
@@ -183,9 +185,9 @@ export const services: Service[] = [
         a: "Recomenda-se evitar exposição solar intensa após o procedimento.",
       },
     ],
-    seoTitle: "Depilação em Cera em Almada | Studio Riso Souza",
+    seoTitle: "Depilação feminina com cera quente em Almada | Studio Riso Souza",
     seoDescription:
-      "Depilação em cera em Almada com técnica cuidadosa, ambiente reservado e pele suave por mais tempo.",
+      "Depilação feminina com cera quente em Almada com técnica cuidadosa, ambiente reservado e pele suave por mais tempo.",
   },
 ];
 

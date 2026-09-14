@@ -2,14 +2,13 @@
  * Categorias da área de Serviços — cada categoria tem a sua própria página.
  * Os serviços e valores vêm de src/lib/catalog.ts (fonte única de preços).
  */
-import { categories, experiencias, type CatalogGroup, type CatalogItem } from "@/lib/catalog";
+import { categories, type CatalogGroup, type CatalogItem } from "@/lib/catalog";
 
 import maosImg from "@/assets/cat-maos.jpg";
 import pesImg from "@/assets/cat-pes.jpg";
 import pestanasImg from "@/assets/cat-pestanas.jpg";
 import sobrancelhasImg from "@/assets/cat-sobrancelhas.jpg";
 import depilacaoImg from "@/assets/cat-depilacao.jpg";
-import experienciasImg from "@/assets/cat-experiencias.jpg";
 import maosMascImg from "@/assets/cat-maos-masc.jpg";
 import pesMascImg from "@/assets/cat-pes-masc.jpg";
 import executiveImg from "@/assets/cat-executive.jpg";
@@ -105,25 +104,10 @@ export const serviceCategories: ServiceCategory[] = [
     "para-ela",
     "depilacao",
     "depilacao",
-    "Depilação Feminina",
-    "Pele suave e cuidados personalizados para diferentes áreas.",
+    "Depilação feminina com cera quente",
+    "Pele suave e cuidados com cera quente para diferentes áreas.",
     depilacaoImg,
   ),
-  {
-    genero: "para-ela",
-    slug: "experiencias",
-    label: "Experiências Riso",
-    title: "Experiências Riso",
-    description:
-      "Combinações especiais para quem deseja viver mais de um cuidado no mesmo momento.",
-    image: experienciasImg,
-    intro: experiencias.intro,
-    items: experiencias.items.map((e) => ({
-      name: e.name,
-      price: e.price,
-      description: e.includes,
-    })),
-  },
   build(
     "para-ele",
     "maos",

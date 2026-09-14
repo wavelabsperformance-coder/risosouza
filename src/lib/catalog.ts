@@ -32,26 +32,6 @@ export interface CatalogCategory {
   groups: CatalogGroup[];
 }
 
-export const experiencias = {
-  title: "Experiências Riso",
-  intro:
-    "Combinações pensadas para quem deseja aproveitar diferentes cuidados num único momento — mais praticidade, mais cuidado, uma experiência completa.",
-  items: [
-    { name: "Riso Essential", price: "29€", includes: "Manicure + Design de Sobrancelhas" },
-    { name: "Riso Beauty", price: "37€", includes: "Manicure + Pedicure" },
-    {
-      name: "Riso Signature",
-      price: "49€",
-      includes: "Manicure + Pedicure + Design de Sobrancelhas",
-    },
-    {
-      name: "Riso Complete",
-      price: "55€",
-      includes: "Manicure + Pedicure + Sobrancelhas + Buço",
-    },
-  ],
-};
-
 export const regraStudio = {
   title: "Para que tudo fique claro desde o início 🤍",
   paragraphs: [
@@ -77,7 +57,7 @@ export const categories: CatalogCategory[] = [
         items: [
           {
             name: "Manicure Tradicional + Verniz Tradicional",
-            price: "18€",
+            price: "20€",
             description:
               "Embelezamento das mãos com cuidado, higiene e acabamento elegante.",
             includes: [
@@ -86,7 +66,7 @@ export const categories: CatalogCategory[] = [
               "Modelagem das unhas",
               "Limpeza e cuidado das cutículas",
               "Preparação das unhas",
-              "Aplicação de verniz/esmalte tradicional",
+              "Aplicação de verniz tradicional",
             ],
             excludes: [
               "Esfoliação",
@@ -102,25 +82,19 @@ export const categories: CatalogCategory[] = [
             note: "No Studio Riso Souza, a limpeza das cutículas é realizada de forma cuidadosa e delicada, respeitando a proteção natural da região.",
           },
           {
-            name: "Esmaltação Tradicional",
-            price: "15€",
-            description:
-              "Preparação e aplicação de esmaltação tradicional para manter as unhas bonitas e cuidadas.",
-          },
-          {
             name: "Manicure + Verniz Gel",
-            price: "22€",
+            price: "25€",
             description:
-              "Inclui o cuidado completo da manicure associado à aplicação de verniz gel.",
+              "Inclui o cuidado completo da manicure associado à aplicação de verniz gel duradouro.",
           },
           {
-            name: "Blindagem",
-            price: "28€",
+            name: "Blindagem ou Banho de Gel",
+            price: "30€",
             description:
               "Proteção e estrutura para a unha natural, sem acrescentar comprimento.",
             includes: [
               "Preparação da unha",
-              "Aplicação do produto de blindagem",
+              "Aplicação do produto de blindagem / banho de gel",
               "Estruturação",
               "Nivelamento",
               "Acabamento",
@@ -150,7 +124,7 @@ export const categories: CatalogCategory[] = [
           },
           {
             name: "Manutenção de Gel",
-            price: "32€",
+            price: "30€",
             description:
               "Manutenção da estrutura e acabamento do alongamento em gel.",
           },
@@ -199,8 +173,8 @@ export const categories: CatalogCategory[] = [
               "Inclui o cuidado da pedicure associado à aplicação de verniz gel.",
           },
           {
-            name: "Pedicure Medical — Avaliação + Preventiva",
-            price: "Desde 40€",
+            name: "Pedicure Medical",
+            price: "Valor sob análise de cada caso",
             description:
               "A Pedicure Medical é indicada quando, além do embelezamento, existem necessidades específicas relacionadas à pele, unhas ou conforto dos pés. O atendimento começa com uma avaliação individualizada.",
             includes: [
@@ -214,29 +188,11 @@ export const categories: CatalogCategory[] = [
               "Orientações de manutenção em casa",
               "Acompanhamento da evolução dos pés",
             ],
-            extra: [
-              "As inclusões acima podem fazer parte do atendimento conforme avaliação individual.",
-            ],
-            note: "O valor final é definido após avaliação, de acordo com as necessidades identificadas e o tempo necessário para o procedimento.",
-          },
-          {
-            name: "Pedicure Medical — Nível 1",
-            price: "45€",
-            description: "Atendimento definido após avaliação individualizada.",
-          },
-          {
-            name: "Pedicure Medical — Nível 2",
-            price: "55€",
-            description: "Atendimento definido após avaliação individualizada.",
-          },
-          {
-            name: "Pedicure Medical — Casos Complexos",
-            price: "Desde 65€",
-            description: "Atendimento definido após avaliação individualizada.",
+            note: "O valor final é definido sob análise de cada caso, de acordo com as necessidades identificadas e o tempo necessário para o procedimento.",
           },
         ],
         footnote:
-          "O valor final é definido após avaliação, de acordo com as necessidades identificadas e o tempo necessário para o procedimento. Cada caso é avaliado individualmente e alterações que ultrapassem o âmbito profissional do Studio poderão necessitar de encaminhamento para um profissional de saúde habilitado.",
+          "O valor final da Pedicure Medical é definido sob análise de cada caso. Alterações que ultrapassem o âmbito profissional do Studio poderão necessitar de encaminhamento para um profissional de saúde habilitado.",
       },
       {
         id: "pestanas",
@@ -256,28 +212,12 @@ export const categories: CatalogCategory[] = [
               "Aplicação das pestanas em tela",
               "Acabamento e orientação de cuidados",
             ],
-            extra: [
-              "Duração aproximada: 20 minutos",
-              "Manutenção até 30 dias, mediante avaliação das condições das pestanas e da aplicação anterior",
-            ],
-            note: "Caso seja necessário remover a aplicação anterior e realizar uma nova aplicação, poderá ser considerado um novo serviço.",
+            extra: ["Duração aproximada: 20 minutos"],
           },
           {
-            name: "Manutenção — até 30 dias",
-            price: "30€",
-            description:
-              "Manutenção da aplicação, mediante avaliação das condições das pestanas e da aplicação anterior.",
-          },
-          {
-            name: "Remoção",
+            name: "Remoção de Pestanas",
             price: "10€",
-            description: "Remoção cuidadosa das pestanas.",
-          },
-          {
-            name: "Remoção + Nova Aplicação",
-            price: "30€",
-            description:
-              "Remoção da aplicação anterior associada a uma nova aplicação.",
+            description: "Remoção cuidadosa e segura das pestanas.",
           },
           {
             name: "Lash Design / Extensão de Cílios",
@@ -291,7 +231,7 @@ export const categories: CatalogCategory[] = [
               "Aplicação",
               "Orientações de cuidados posteriores",
             ],
-            note: "Manutenção, remoção de trabalhos realizados por outro profissional e técnicas especiais são serviços distintos e devem ser informados no agendamento.",
+            note: "Técnicas especiais e remoção de outros profissionais são serviços distintos.",
           },
         ],
       },
@@ -313,20 +253,17 @@ export const categories: CatalogCategory[] = [
             ],
           },
           {
-            name: "Design + Henna",
-            price: "22€",
+            name: "Design de Sobrancelhas com Henna",
+            price: "27€",
             description:
               "Design associado à aplicação de henna para proporcionar preenchimento visual e definição temporária.",
           },
-          { name: "Manutenção de Design", price: "12€" },
-          { name: "Buço", price: "5€" },
-          { name: "Design + Buço", price: "18€" },
         ],
       },
       {
         id: "depilacao",
-        title: "Depilação em Cera",
-        intro: "Técnica cuidadosa, num ambiente reservado e confortável.",
+        title: "Depilação feminina com cera quente",
+        intro: "Técnica cuidadosa com cera quente, num ambiente reservado e confortável.",
         compact: [
           { name: "Buço", price: "5€" },
           { name: "Queixo", price: "5€" },
@@ -361,7 +298,7 @@ export const categories: CatalogCategory[] = [
         items: [
           {
             name: "Manicure Masculina",
-            price: "17€",
+            price: "18€",
             description:
               "Um cuidado essencial para homens que valorizam higiene, apresentação e cuidado pessoal.",
             includes: [
@@ -375,7 +312,7 @@ export const categories: CatalogCategory[] = [
           },
           {
             name: "Manicure Masculina + Hidratação",
-            price: "22€",
+            price: "25€",
             description:
               "Manicure masculina completa associada ao cuidado e hidratação das mãos.",
             includes: ["Manicure Masculina", "Hidratação das mãos", "Finalização"],
@@ -390,7 +327,7 @@ export const categories: CatalogCategory[] = [
         items: [
           {
             name: "Pedicure Masculina",
-            price: "30€",
+            price: "25€",
             description:
               "Para o homem que deseja manter os pés limpos, cuidados e apresentáveis.",
             includes: [
@@ -400,13 +337,6 @@ export const categories: CatalogCategory[] = [
               "Polimento",
               "Finalização / hidratação leve",
             ],
-          },
-          {
-            name: "Pedicure Masculina + Cuidado de Calosidades",
-            price: "38€",
-            description:
-              "Pedicure masculina associada ao cuidado estético de asperezas e calosidades leves.",
-            note: "Este serviço destina-se a necessidades estéticas de asperezas ou calosidades leves. Alterações que exijam avaliação técnica devem ser direcionadas para a Pedicure Medical, conforme avaliação e âmbito profissional.",
           },
         ],
       },
@@ -425,7 +355,6 @@ export const categories: CatalogCategory[] = [
           },
         ],
       },
-
       {
         id: "depilacao-masc",
         title: "Depilação Masculina",

@@ -28,7 +28,7 @@ export const SITE = {
   ],
   /** Agência responsável pelo site — editar aqui o Instagram oficial. */
   agency: {
-    name: "Wavy Labs Performance",
+    name: "Wave Labs Performance",
     instagram: "https://www.instagram.com/wavylabsperformance",
   },
 } as const;

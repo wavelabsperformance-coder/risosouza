@@ -122,18 +122,20 @@ function CategoriaPage() {
             {category.compact.map((c, i) => (
               <Reveal key={c.name} delay={i * 0.03}>
                 <article className="dark-block grid grid-cols-1 border border-primary/15 shadow-[0_28px_70px_-50px_rgba(0,0,0,0.9)] transition-colors duration-500 hover:border-primary/45 sm:grid-cols-[minmax(0,180px)_1fr]">
-                  <img
-                    src={
-                      (category.genero === "para-ela"
-                        ? feminineWaxImages[c.name]
-                        : masculineServiceImages[c.name]) ?? category.image
-                    }
-                    alt={c.name}
-                    loading="lazy"
-                    width={800}
-                    height={600}
-                    className="h-40 w-full object-cover sm:h-full"
-                  />
+                  <div className="flex w-full items-center justify-center bg-[#12110f] overflow-hidden">
+                    <img
+                      src={
+                        (category.genero === "para-ela"
+                          ? feminineWaxImages[c.name]
+                          : masculineServiceImages[c.name]) ?? category.image
+                      }
+                      alt={c.name}
+                      loading="lazy"
+                      width={800}
+                      height={600}
+                      className="h-44 w-full object-contain sm:h-full sm:object-cover"
+                    />
+                  </div>
                   <div className="flex flex-col gap-5 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-7">
                     <div>
                       <h3 className="font-display text-xl font-light">{c.name}</h3>
@@ -191,22 +193,21 @@ function CategoriaPage() {
 
       {/* REGRA GERAL DO STUDIO */}
       <section className="mx-auto max-w-[1400px] px-6 pt-20 lg:px-12">
-          <Reveal>
-            <div className="dark-block border border-primary/20 p-8 sm:p-12">
-              <p className="eyebrow">Transparência</p>
-              <h2 className="mt-4 max-w-2xl font-display text-2xl leading-snug font-light md:text-3xl">
-                {regraStudio.title}
-              </h2>
-              <div className="mt-6 h-px w-10 bg-primary/50" />
-              <div className="mt-6 max-w-3xl space-y-3 text-sm leading-relaxed text-muted-foreground">
-                {regraStudio.paragraphs.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-              </div>
+        <Reveal>
+          <div className="dark-block border border-primary/20 p-8 sm:p-12">
+            <p className="eyebrow">Transparência</p>
+            <h2 className="mt-4 max-w-2xl font-display text-2xl leading-snug font-light md:text-3xl">
+              {regraStudio.title}
+            </h2>
+            <div className="mt-6 h-px w-10 bg-primary/50" />
+            <div className="mt-6 max-w-3xl space-y-3 text-sm leading-relaxed text-muted-foreground">
+              {regraStudio.paragraphs.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
             </div>
-          </Reveal>
+          </div>
+        </Reveal>
       </section>
-
 
       {/* OUTRAS CATEGORIAS */}
       <section className="mx-auto max-w-[1400px] px-6 pt-24 pb-28 lg:px-12">
@@ -267,15 +268,18 @@ function CategoriaPage() {
 
 function ServiceRow({ item, image }: { item: CatalogItem; image: string }) {
   return (
-    <article className="dark-block grid grid-cols-1 border border-primary/15 shadow-[0_28px_70px_-50px_rgba(0,0,0,0.9)] transition-colors duration-500 hover:border-primary/45 lg:grid-cols-[minmax(0,300px)_1fr]">
-      <img
-        src={image}
-        alt={item.name}
-        loading="lazy"
-        width={1200}
-        height={912}
-        className="h-52 w-full object-cover lg:h-full"
-      />
+    <article className="dark-block grid grid-cols-1 border border-primary/15 shadow-[0_28px_70px_-50px_rgba(0,0,0,0.9)] transition-colors duration-500 hover:border-primary/45 lg:grid-cols-[minmax(0,340px)_1fr]">
+      {/* Container adaptativo: no mobile ajusta a imagem inteira sem cortes */}
+      <div className="flex w-full items-center justify-center bg-[#12110f] overflow-hidden">
+        <img
+          src={image}
+          alt={item.name}
+          loading="lazy"
+          width={1200}
+          height={912}
+          className="w-full h-auto max-h-[360px] object-contain sm:max-h-[420px] lg:h-full lg:max-h-none lg:object-cover"
+        />
+      </div>
       <div className="flex flex-col gap-6 p-7 sm:p-9 lg:flex-row lg:items-start lg:justify-between">
         <div className="max-w-2xl">
           <h3 className="font-display text-xl leading-snug font-light sm:text-2xl">{item.name}</h3>

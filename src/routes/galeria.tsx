@@ -1,8 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroImg from "@/assets/hero.jpeg";
-import studioImg from "@/assets/studio.jpg";
-import risoImg from "@/assets/riso.jpg";
-import nailsImg from "@/assets/service-nails.jpg";
+
+// Institucional - Espaço e Riso (nomes e extensões exatas do print)
+import img1 from "@/assets/1.jpeg";
+import img2 from "@/assets/2.jpeg";
+import img3 from "@/assets/3.jpeg";
+import risoEspacoImg from "@/assets/riso-espaco.jpg";
+
+// Serviços Femininos
+import manicureImg from "@/assets/feminino/maos/manicuretradicional.jpeg";
+import vernizGelImg from "@/assets/feminino/maos/vernizgel.jpg";
+import pedicureImg from "@/assets/feminino/pes/pedicure.jpg";
+import pestanasImg from "@/assets/feminino/pestanas/pestanas.jpeg";
+import designImg from "@/assets/feminino/Sobrancelhas/designer.jpeg";
+
+// Serviços Masculinos
+import maosMascImg from "@/assets/cat-maos-masc.jpg";
+import pesMascImg from "@/assets/cat-pes-masc.jpg";
+
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { CtaBanner } from "@/components/CtaBanner";
@@ -32,12 +46,17 @@ export const Route = createFileRoute("/galeria")({
 });
 
 const gallery = [
-  { src: nailsImg, alt: "Unhas em gel com acabamento natural", label: "Unhas em gel" },
-  { src: studioImg, alt: "Ambiente do Studio Riso Souza", label: "Ambiente" },
-  { src: heroImg, alt: "Estação de atendimento", label: "Atendimento" },
-  { src: risoImg, alt: "Riso Souza no Studio", label: "Riso Souza" },
-  { src: nailsImg, alt: "Detalhe de acabamento das unhas", label: "Detalhe" },
-  { src: studioImg, alt: "Espaço reservado do Studio", label: "Privacidade" },
+  { src: img1, alt: "Riso Souza - Atendimento", label: "Studio Riso Souza" },
+  { src: img2, alt: "Ambiente do Studio", label: "Ambiente" },
+  { src: img3, alt: "Cuidado e Detalhe", label: "Exclusividade" },
+  { src: risoEspacoImg, alt: "Espaço Studio Riso Souza", label: "Riso Espaço" },
+  { src: manicureImg, alt: "Manicure Tradicional", label: "Manicure" },
+  { src: vernizGelImg, alt: "Manicure com Verniz Gel", label: "Verniz Gel" },
+  { src: pedicureImg, alt: "Pedicure Feminina", label: "Pedicure" },
+  { src: pestanasImg, alt: "Pestanas Express em Tela", label: "Pestanas" },
+  { src: designImg, alt: "Design de Sobrancelhas", label: "Sobrancelhas" },
+  { src: maosMascImg, alt: "Manicure Masculina", label: "Manicure Masculina" },
+  { src: pesMascImg, alt: "Pedicure Masculina", label: "Pedicure Masculina" },
 ];
 
 function Galeria() {

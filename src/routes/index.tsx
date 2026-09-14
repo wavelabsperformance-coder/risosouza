@@ -16,11 +16,15 @@ import {
 
 const processIcons = [MessageCircle, Gem, CalendarCheck, Flower2, Sparkles];
 
+// Hero e Institucional
 import heroImg from "@/assets/hero.jpeg";
-import studioImg from "@/assets/studio.jpg";
 import risoRetrato from "@/assets/riso-retrato.jpg";
 import risoPro from "@/assets/riso-hero.jpg";
-import vernizgelImg from "@/assets/cat-maos.jpg";
+import riso1Img from "@/assets/1.jpeg";
+
+// Serviços (para a seção de serviços e galeria)
+import vernizGelImg from "@/assets/feminino/maos/vernizgel.jpg";
+import pedicureImg from "@/assets/feminino/pes/pedicure.jpg";
 import femininoImg from "@/assets/service-nails.jpg";
 import masculinoImg from "@/assets/cuidados-masculinos.jpg";
 
@@ -39,7 +43,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Estúdio de estética premium feminina em Almada. Alongamento em gel, verniz gel, pedicure medical, lash design, sobrancelhas e depilação com horário marcado.",
+          "Estúdio de estética premium em Almada. Alongamento em gel, verniz gel, pedicure medical, lash design, sobrancelhas e depilação com horário marcado.",
       },
       {
         property: "og:title",
@@ -57,11 +61,12 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
+// Os 4 destaques oficiais da Home
 const galleryItems = [
-  { src: vernizgelImg, alt: "Verniz gel com acabamento natural e duradouro", label: "Verniz Gel" },
-  { src: studioImg, alt: "Ambiente do Studio Riso Souza", label: "O Studio" },
+  { src: riso1Img, alt: "Riso Souza, fundadora do Studio", label: "Riso Souza" },
   { src: heroImg, alt: "Estação de atendimento do Studio", label: "Atendimento" },
-  { src: risoRetrato, alt: "Riso Souza, fundadora do Studio", label: "Riso Souza" },
+  { src: vernizGelImg, alt: "Manicure com verniz gel de alta durabilidade", label: "Manicure" },
+  { src: pedicureImg, alt: "Pedicure feminina com cuidado e higiene completa", label: "Pedicure" },
 ];
 
 function Home() {
@@ -104,7 +109,7 @@ function Home() {
                 transition={{ duration: 1, delay: 0.3 }}
                 className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground"
               >
-                Um estúdio de estética feminina onde cada atendimento é uma pausa —
+                Um estúdio de estética onde cada atendimento é uma pausa —
                 um tempo só seu para cuidar da sua beleza sem pressa, com atenção,
                 privacidade e acolhimento.
               </motion.p>
@@ -208,7 +213,7 @@ function Home() {
             <Reveal delay={0.1} className="order-3 lg:order-none">
               <div className="mt-7 space-y-5 text-sm leading-relaxed text-muted-foreground">
                 {[
-                  "Nascida em Aracaju, Sergipe, e hoje a viver em Almada, Riso Souza construiu uma trajetória marcada pelo desejo de transformar vidas através da autoestima, do cuidado e do desenvolvimento humano.",
+                  "Nascida em Aracaju, Sergipe, e hoje vive em Almada, Riso Souza construiu uma trajetória marcada pelo desejo de transformar vidas através da autoestima, do cuidado e do desenvolvimento humano.",
                   "São mais de 12 anos em áreas ligadas à beleza, ao atendimento ao público, à liderança e à construção de marcas pessoais — como gestora de equipas, cerimonialista, empresária, mentora, palestrante e criadora de conteúdo digital.",
                   "A sua própria transformação também faz parte desta história: após uma cirurgia bariátrica, eliminou mais de 47 kg e viveu uma mudança profunda de saúde, autoestima e qualidade de vida. Foi daí que nasceu o propósito de mostrar que toda mulher pode florescer, em qualquer fase da vida.",
                 ].map((texto) => (
