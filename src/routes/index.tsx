@@ -1,20 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import {
-  ArrowRight,
-  BadgeCheck,
-  CalendarCheck,
-  Clock,
-  Flower2,
-  Gem,
-  Heart,
-  HeartHandshake,
-  Lock,
-  MessageCircle,
-  Sparkles,
-} from "lucide-react";
-
-const processIcons = [MessageCircle, Gem, CalendarCheck, Flower2, Sparkles];
+import { ArrowRight, Clock, Heart, Sparkles } from "lucide-react";
 
 // Hero e Institucional
 import heroImg from "@/assets/hero.jpeg";
@@ -67,6 +53,33 @@ const galleryItems = [
   { src: heroImg, alt: "Estação de atendimento do Studio", label: "Atendimento" },
   { src: vernizGelImg, alt: "Manicure com verniz gel de alta durabilidade", label: "Manicure" },
   { src: pedicureImg, alt: "Pedicure feminina com cuidado e higiene completa", label: "Pedicure" },
+];
+
+// Composição da galeria: 1ª foto grande, 2ª larga, as outras em grade.
+const galleryLayout = [
+  { cell: "col-span-2 lg:row-span-2", shape: "aspect-[4/3] lg:aspect-auto" },
+  { cell: "col-span-2", shape: "aspect-[16/10] lg:aspect-auto" },
+  { cell: "", shape: "aspect-[3/4] lg:aspect-auto" },
+  { cell: "", shape: "aspect-[3/4] lg:aspect-auto" },
+];
+
+const pilares = [
+  {
+    title: "Horário exclusivo",
+    desc: "Sem sobreposição de clientes e sem interrupções durante a sua sessão.",
+  },
+  {
+    title: "Privacidade e calma",
+    desc: "Espaço reservado e silencioso para garantir relaxamento e conforto.",
+  },
+  {
+    title: "Higiene e biossegurança",
+    desc: "Materiais esterilizados em autoclave e descartáveis individuais.",
+  },
+  {
+    title: "Atendimento humano",
+    desc: "Escuta atenta e atenção dedicada às suas necessidades reais.",
+  },
 ];
 
 function Home() {
@@ -182,62 +195,68 @@ function Home() {
         </div>
       </section>
 
-      {/* SOBRE */}
-      <section className="mx-auto max-w-[1400px] px-6 py-28 lg:px-12">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          <Reveal className="order-2 lg:order-none">
-            <div className="relative overflow-hidden border border-primary/20 shadow-[0_28px_70px_-50px_rgba(0,0,0,0.9)]">
-              <img
-                src={risoRetrato}
-                alt="Riso Souza, fundadora do Studio Riso Souza"
-                width={1280}
-                height={1920}
-                loading="lazy"
-                className="aspect-[4/5] w-full object-cover object-top"
-              />
+      {/* SOBRE — fundo areia */}
+      <section className="bg-[#EFE6D4]">
+        <div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-12">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <Reveal className="order-2 lg:order-none">
+              <div className="relative overflow-hidden border border-primary/30 shadow-[0_28px_70px_-50px_rgba(0,0,0,0.9)]">
+                <img
+                  src={risoRetrato}
+                  alt="Riso Souza, fundadora do Studio Riso Souza"
+                  width={1280}
+                  height={1920}
+                  loading="lazy"
+                  className="aspect-[4/5] w-full object-cover object-top"
+                />
+              </div>
+            </Reveal>
+            <div className="contents lg:block">
+              <Reveal className="order-1 lg:order-none">
+                <div className="inline-flex items-center gap-3">
+                  <span className="h-px w-6 bg-primary" />
+                  <p className="text-[0.72rem] tracking-[0.28em] font-semibold text-primary uppercase">
+                    Quem é Riso Souza
+                  </p>
+                </div>
+                <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#2A2118] leading-[1.18]">
+                  A beleza como caminho de{" "}
+                  <span className="gold-text italic font-medium">recomeço</span>
+                </h2>
+              </Reveal>
+              <Reveal delay={0.1} className="order-3 lg:order-none">
+                <div className="mt-7 space-y-5 text-sm leading-relaxed text-muted-foreground">
+                  {[
+                    "Nascida em Aracaju, Sergipe, e hoje vive em Almada, Riso Souza construiu uma trajetória marcada pelo desejo de transformar vidas através da autoestima, do cuidado e do desenvolvimento humano.",
+                    "São mais de 12 anos em áreas ligadas à beleza, ao atendimento ao público, à liderança e à construção de marcas pessoais — como gestora de equipas, cerimonialista, empresária, mentora, palestrante e criadora de conteúdo digital.",
+                    "A sua própria transformação também faz parte desta história: após uma cirurgia bariátrica, eliminou mais de 47 kg e viveu uma mudança profunda de saúde, autoestima e qualidade de vida. Foi daí que nasceu o propósito de mostrar que toda mulher pode florescer, em qualquer fase da vida.",
+                  ].map((texto, i) => (
+                    <div
+                      key={texto.slice(0, 24)}
+                      className={`max-lg:dark-block max-lg:border max-lg:border-primary/15 max-lg:p-6 max-lg:shadow-[0_28px_70px_-50px_rgba(0,0,0,0.9)] ${
+                        i === 0
+                          ? "text-muted-foreground lg:text-lg lg:leading-relaxed lg:text-[#2A2118]"
+                          : "text-muted-foreground lg:text-[#4A3F33]"
+                      }`}
+                    >
+                      <p>{texto}</p>
+                    </div>
+                  ))}
+                </div>
+                <Link
+                  to="/sobre"
+                  className="mt-8 inline-flex items-center gap-2 border-b border-primary pb-1 text-[0.68rem] tracking-[0.24em] font-semibold text-[#2A2118] uppercase transition-colors hover:text-primary"
+                >
+                  Ler a história completa <ArrowRight size={14} />
+                </Link>
+              </Reveal>
             </div>
-          </Reveal>
-          <div className="contents lg:block">
-            <Reveal className="order-1 lg:order-none">
-              <div className="inline-flex items-center gap-3">
-                <span className="h-px w-6 bg-primary" />
-                <p className="text-[0.72rem] tracking-[0.28em] font-semibold text-primary uppercase">
-                  Quem é Riso Souza
-                </p>
-              </div>
-              <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-foreground leading-[1.18]">
-                A beleza como caminho de{" "}
-                <span className="gold-text italic font-medium">recomeço</span>
-              </h2>
-            </Reveal>
-            <Reveal delay={0.1} className="order-3 lg:order-none">
-              <div className="mt-7 space-y-5 text-sm leading-relaxed text-muted-foreground">
-                {[
-                  "Nascida em Aracaju, Sergipe, e hoje vive em Almada, Riso Souza construiu uma trajetória marcada pelo desejo de transformar vidas através da autoestima, do cuidado e do desenvolvimento humano.",
-                  "São mais de 12 anos em áreas ligadas à beleza, ao atendimento ao público, à liderança e à construção de marcas pessoais — como gestora de equipas, cerimonialista, empresária, mentora, palestrante e criadora de conteúdo digital.",
-                  "A sua própria transformação também faz parte desta história: após uma cirurgia bariátrica, eliminou mais de 47 kg e viveu uma mudança profunda de saúde, autoestima e qualidade de vida. Foi daí que nasceu o propósito de mostrar que toda mulher pode florescer, em qualquer fase da vida.",
-                ].map((texto) => (
-                  <div
-                    key={texto.slice(0, 24)}
-                    className="max-lg:dark-block text-muted-foreground max-lg:border max-lg:border-primary/15 max-lg:p-6 max-lg:shadow-[0_28px_70px_-50px_rgba(0,0,0,0.9)]"
-                  >
-                    <p>{texto}</p>
-                  </div>
-                ))}
-              </div>
-              <Link
-                to="/sobre"
-                className="mt-8 inline-flex items-center gap-2 text-[0.68rem] tracking-[0.24em] font-semibold text-primary uppercase hover:underline"
-              >
-                Ler a história completa <ArrowRight size={14} />
-              </Link>
-            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* SERVIÇOS */}
-      <section className="border-t border-border/80 bg-card/20">
+      {/* SERVIÇOS — fundo verde profundo */}
+      <section className="bg-[#243127]">
         <div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-12">
           <Reveal>
             <div className="inline-flex items-center gap-3">
@@ -246,11 +265,11 @@ function Home() {
                 Serviços Exclusivos
               </p>
             </div>
-            <h2 className="mt-4 max-w-2xl font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-foreground leading-[1.18]">
-              Experiências feitas para quem{" "}
-              <span className="gold-text italic font-medium">valoriza o detalhe</span>
+            <h2 className="mt-4 max-w-2xl font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#F3EBDD] leading-[1.18]">
+              Dois universos, o mesmo{" "}
+              <span className="gold-text italic font-medium">rigor no detalhe</span>
             </h2>
-            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-[#F3EBDD]/70">
               No Studio Riso Souza, cada cuidado é pensado para proporcionar uma
               experiência personalizada, com atenção aos detalhes, bem-estar e
               beleza natural.
@@ -262,6 +281,7 @@ function Home() {
               {
                 categoria: "para-ela" as const,
                 eyebrow: "Para Ela",
+                title: "Serviços femininos",
                 image: femininoImg,
                 alt: "Cuidados femininos no Studio Riso Souza",
                 text: "Beleza, cuidado e experiências pensadas para valorizar a sua rotina, a sua essência e os detalhes que fazem você se sentir ainda melhor.",
@@ -270,6 +290,7 @@ function Home() {
               {
                 categoria: "para-ele" as const,
                 eyebrow: "Para Ele",
+                title: "Cuidados masculinos",
                 image: masculinoImg,
                 alt: "Cuidados masculinos no Studio Riso Souza",
                 text: "Cuidados pensados para homens que valorizam higiene, apresentação e bem-estar, com a mesma atenção aos detalhes e experiência personalizada do Studio Riso Souza.",
@@ -286,7 +307,7 @@ function Home() {
                       local: "home",
                     })
                   }
-                  className="dark-block group flex h-full flex-col border border-primary/20 shadow-[0_28px_70px_-50px_rgba(0,0,0,0.9)] transition-colors duration-500 hover:border-primary/50"
+                  className="dark-block group flex h-full flex-col border border-primary/25 shadow-[0_28px_70px_-50px_rgba(0,0,0,0.9)] transition-colors duration-500 hover:border-primary/60"
                 >
                   <div className="relative overflow-hidden">
                     <img
@@ -300,7 +321,10 @@ function Home() {
                   </div>
                   <div className="flex flex-1 flex-col p-7 sm:p-10">
                     <p className="eyebrow">{c.eyebrow}</p>
-                    <div className="mt-4 h-px w-10 bg-primary/50" />
+                    <h3 className="mt-3 font-display text-2xl font-normal text-foreground sm:text-3xl">
+                      {c.title}
+                    </h3>
+                    <div className="mt-5 h-px w-10 bg-primary/50" />
                     <p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">
                       {c.text}
                     </p>
@@ -318,7 +342,7 @@ function Home() {
             <div className="mt-12 flex justify-center">
               <Link
                 to="/servicos"
-                className="border border-border/80 px-9 py-4 text-[0.68rem] tracking-[0.24em] font-medium text-foreground uppercase transition-colors hover:border-primary hover:text-primary"
+                className="border border-[#F3EBDD]/30 px-9 py-4 text-[0.68rem] tracking-[0.24em] font-medium text-[#F3EBDD] uppercase transition-colors hover:border-primary hover:text-primary"
               >
                 Conheça todos os serviços
               </Link>
@@ -327,11 +351,11 @@ function Home() {
         </div>
       </section>
 
-      {/* PADRÃO DE ATENDIMENTO — 4 PILARES DIRETOS */}
-      <section className="dark-block border-t border-border">
-        <div className="mx-auto max-w-[1400px] px-6 py-24 lg:px-12">
+      {/* PADRÃO DE ATENDIMENTO — escuro, lista editorial */}
+      <section className="dark-block">
+        <div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-12">
           <Reveal>
-            <div className="flex flex-col gap-4 border-b border-primary/20 pb-8 md:flex-row md:items-end md:justify-between">
+            <div className="flex flex-col gap-6 border-b border-primary/20 pb-10 md:flex-row md:items-end md:justify-between">
               <div>
                 <div className="inline-flex items-center gap-3">
                   <span className="h-px w-6 bg-primary" />
@@ -340,117 +364,80 @@ function Home() {
                   </p>
                 </div>
                 <h2 className="mt-4 max-w-xl font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-foreground leading-[1.18]">
-                  O cuidado está nos{" "}
-                  <span className="gold-text italic font-medium">detalhes</span>
+                  O que não se vê,{" "}
+                  <span className="gold-text italic font-medium">mas se sente</span>
                 </h2>
               </div>
-              <span className="font-display text-sm tracking-[0.24em] font-medium text-primary/80 uppercase">
-                04 pilares
-              </span>
+              <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+                Quatro compromissos que sustentam cada atendimento, do primeiro
+                minuto ao último.
+              </p>
             </div>
           </Reveal>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                icon: CalendarCheck,
-                number: "01",
-                title: "Horário exclusivo",
-                desc: "Sem sobreposição de clientes e sem interrupções durante a sua sessão.",
-              },
-              {
-                icon: Lock,
-                number: "02",
-                title: "Privacidade e calma",
-                desc: "Espaço reservado e silencioso para garantir relaxamento e conforto.",
-              },
-              {
-                icon: BadgeCheck,
-                number: "03",
-                title: "Higiene e biossegurança",
-                desc: "Materiais esterilizados em autoclave e descartáveis individuais.",
-              },
-              {
-                icon: HeartHandshake,
-                number: "04",
-                title: "Atendimento humano",
-                desc: "Escuta atenta e atenção dedicada às suas necessidades reais.",
-              },
-            ].map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <Reveal key={item.title} delay={i * 0.06}>
-                  <div className="flex flex-col justify-between border border-primary/20 bg-black/30 p-7 shadow-[0_20px_50px_-30px_rgba(0,0,0,0.85)] transition-all duration-300 hover:border-primary/45">
-                    <div>
-                      <div className="flex items-center justify-between">
-                        <span className="grid h-10 w-10 place-items-center border border-primary/35 text-primary">
-                          <Icon size={18} strokeWidth={1.5} />
-                        </span>
-                        <span className="font-display text-xs tracking-widest text-primary/40">
-                          {item.number}
-                        </span>
-                      </div>
-
-                      <h3 className="mt-6 font-display text-lg font-normal text-foreground">
-                        {item.title}
-                      </h3>
-                      <div className="mt-3 h-px w-8 bg-primary/40" />
-                      <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-                </Reveal>
-              );
-            })}
+          <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+            {pilares.map((item, i) => (
+              <Reveal key={item.title} delay={i * 0.06}>
+                <div
+                  className={`h-full border-t border-primary/25 pt-6 lg:border-t-0 lg:pt-0 ${
+                    i > 0 ? "lg:border-l lg:pl-8" : ""
+                  }`}
+                >
+                  <h3 className="font-display text-xl font-normal text-foreground sm:text-2xl">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    {item.desc}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* PROCESSO */}
-      <section className="mx-auto max-w-[1400px] px-6 py-28 lg:px-12">
-        <Reveal>
-          <div className="inline-flex items-center gap-3">
-            <span className="h-px w-6 bg-primary" />
-            <p className="text-[0.72rem] tracking-[0.28em] font-semibold text-primary uppercase">
-              A Sua Experiência
-            </p>
-          </div>
-          <h2 className="mt-4 max-w-2xl font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-foreground leading-[1.18]">
-            Do primeiro contacto ao seu momento de{" "}
-            <span className="gold-text italic font-medium">autocuidado</span>
-          </h2>
-        </Reveal>
-        <ol className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {processSteps.map((step, i) => {
-            const Icon = processIcons[i] ?? Sparkles;
-            return (
+      {/* PROCESSO — fundo areia, linha do tempo */}
+      <section className="bg-[#E7DAC3]">
+        <div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-12">
+          <Reveal>
+            <div className="inline-flex items-center gap-3">
+              <span className="h-px w-6 bg-primary" />
+              <p className="text-[0.72rem] tracking-[0.28em] font-semibold text-primary uppercase">
+                A Sua Experiência
+              </p>
+            </div>
+            <h2 className="mt-4 max-w-2xl font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#2A2118] leading-[1.18]">
+              Do primeiro contacto ao seu{" "}
+              <span className="gold-text italic font-medium">momento de pausa</span>
+            </h2>
+          </Reveal>
+          <ol className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-0">
+            {processSteps.map((step, i) => (
               <Reveal key={step.title} delay={i * 0.06}>
-                <li className="dark-block relative flex h-full flex-col border border-primary/20 p-6 sm:p-8 shadow-[0_28px_70px_-50px_rgba(0,0,0,0.9)] transition-colors duration-500 hover:border-primary/50">
+                <li className="relative h-full border-l border-[#2A2118]/20 pl-6 lg:border-l-0 lg:pt-8 lg:pr-6 lg:pl-0">
                   <span
                     aria-hidden
-                    className="absolute top-6 right-6 font-display text-3xl leading-none font-normal text-primary/30"
-                  >
-                    0{i + 1}
-                  </span>
-                  <span className="grid h-11 w-11 shrink-0 place-items-center border border-primary/35 text-primary">
-                    <Icon size={18} strokeWidth={1.5} />
-                  </span>
-                  <h3 className="mt-6 font-display text-xl font-normal text-foreground">
+                    className="absolute top-0 left-0 hidden h-px w-full bg-[#2A2118]/20 lg:block"
+                  />
+                  <span
+                    aria-hidden
+                    className="absolute top-1.5 -left-[4.5px] h-2 w-2 rounded-full bg-primary lg:top-0 lg:left-0 lg:-translate-y-1/2"
+                  />
+                  <h3 className="font-display text-xl font-normal text-[#2A2118]">
                     {step.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-3 text-sm leading-relaxed text-[#4A3F33]">
                     {step.text}
                   </p>
                 </li>
               </Reveal>
-            );
-          })}
-        </ol>
+            ))}
+          </ol>
+        </div>
       </section>
 
-      {/* DEPOIMENTOS */}
-      <section className="border-y border-border bg-card/30 py-24">
+      {/* DEPOIMENTOS — fundo areia clara */}
+      <section className="bg-[#EFE6D4] py-28">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
           <Reveal>
             <div className="inline-flex items-center gap-3">
@@ -459,9 +446,9 @@ function Home() {
                 Avaliações Reais
               </p>
             </div>
-            <h2 className="mt-4 max-w-2xl font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-foreground leading-[1.18]">
-              A confiança de quem já viveu o{" "}
-              <span className="gold-text italic font-medium">Studio Riso Souza</span>
+            <h2 className="mt-4 max-w-2xl font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#2A2118] leading-[1.18]">
+              Palavras de quem já{" "}
+              <span className="gold-text italic font-medium">viveu o Studio</span>
             </h2>
           </Reveal>
         </div>
@@ -470,50 +457,58 @@ function Home() {
         </div>
       </section>
 
-      {/* GALERIA */}
-      <section className="mx-auto max-w-[1400px] px-6 py-28 lg:px-12">
-        <Reveal>
-          <div className="inline-flex items-center gap-3">
-            <span className="h-px w-6 bg-primary" />
-            <p className="text-[0.72rem] tracking-[0.28em] font-semibold text-primary uppercase">
-              Galeria do Espaço
-            </p>
-          </div>
-          <h2 className="mt-4 max-w-2xl font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-foreground leading-[1.18]">
-            Resultados precisos e a tranquilidade do{" "}
-            <span className="gold-text italic font-medium">nosso ambiente</span>
-          </h2>
-        </Reveal>
-        <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-5">
-          {galleryItems.map((item, i) => (
-            <Reveal key={item.label} delay={i * 0.05}>
-              <button
-                type="button"
-                onClick={() => {
-                  track("visualizacao_galeria", { item: item.label });
-                  lb.open(i);
-                }}
-                className="group relative block w-full overflow-hidden border border-primary/20 bg-black/40 shadow-[0_20px_50px_-30px_rgba(0,0,0,0.85)] transition-all duration-500 hover:border-primary/50"
+      {/* GALERIA — fundo verde profundo, composição assimétrica */}
+      <section className="bg-[#243127]">
+        <div className="mx-auto max-w-[1400px] px-6 py-28 lg:px-12">
+          <Reveal>
+            <div className="inline-flex items-center gap-3">
+              <span className="h-px w-6 bg-primary" />
+              <p className="text-[0.72rem] tracking-[0.28em] font-semibold text-primary uppercase">
+                Galeria do Espaço
+              </p>
+            </div>
+            <h2 className="mt-4 max-w-2xl font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#F3EBDD] leading-[1.18]">
+              Onde a precisão encontra a{" "}
+              <span className="gold-text italic font-medium">calma</span>
+            </h2>
+          </Reveal>
+          <div className="mt-12 grid grid-cols-2 gap-4 lg:auto-rows-[280px] lg:grid-cols-4 lg:gap-5">
+            {galleryItems.map((item, i) => (
+              <Reveal
+                key={item.label}
+                delay={i * 0.05}
+                className={galleryLayout[i]?.cell ?? ""}
               >
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  loading="lazy"
-                  className="aspect-[3/4] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                />
-                <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 text-left text-[0.68rem] tracking-[0.22em] font-medium text-cream uppercase">
-                  {item.label}
-                </span>
-              </button>
-            </Reveal>
-          ))}
+                <button
+                  type="button"
+                  onClick={() => {
+                    track("visualizacao_galeria", { item: item.label });
+                    lb.open(i);
+                  }}
+                  className={`group relative block w-full overflow-hidden border border-primary/25 bg-black/40 shadow-[0_20px_50px_-30px_rgba(0,0,0,0.85)] transition-all duration-500 hover:border-primary/60 lg:h-full ${
+                    galleryLayout[i]?.shape ?? "aspect-[3/4] lg:aspect-auto"
+                  }`}
+                >
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 text-left text-[0.68rem] tracking-[0.22em] font-medium text-cream uppercase">
+                    {item.label}
+                  </span>
+                </button>
+              </Reveal>
+            ))}
+          </div>
+          <Link
+            to="/galeria"
+            className="mt-10 inline-flex items-center gap-2 text-[0.68rem] tracking-[0.24em] font-semibold text-primary uppercase hover:underline"
+          >
+            Ver galeria completa <ArrowRight size={14} />
+          </Link>
         </div>
-        <Link
-          to="/galeria"
-          className="mt-10 inline-flex items-center gap-2 text-[0.68rem] tracking-[0.24em] font-semibold text-primary uppercase hover:underline"
-        >
-          Ver galeria completa <ArrowRight size={14} />
-        </Link>
       </section>
 
       <CtaBanner />
