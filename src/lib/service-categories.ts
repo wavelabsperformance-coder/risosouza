@@ -12,7 +12,6 @@ import depilacaoImg from "@/assets/cat-depilacao.jpg";
 import maosMascImg from "@/assets/cat-maos-masc.jpg";
 import pesMascImg from "@/assets/cat-pes-masc.jpg";
 import executiveImg from "@/assets/cat-executive.jpg";
-import depilacaoMascImg from "@/assets/cat-depilacao-masc.jpg";
 
 export type Genero = "para-ela" | "para-ele";
 
@@ -131,14 +130,6 @@ export const serviceCategories: ServiceCategory[] = [
     "Riso Executive",
     "Mãos e pés numa experiência prática e completa.",
     executiveImg,
-  ),
-  build(
-    "para-ele",
-    "depilacao",
-    "depilacao-masc",
-    "Depilação Masculina",
-    "Cuidados de depilação pensados para diferentes áreas.",
-    depilacaoMascImg,
   ),
 ];
 
